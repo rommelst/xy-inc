@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d06f44c8-6e06-435b-83ea-362187033e29" name="Default Changelist" comment="" />
+    <list default="true" id="d06f44c8-6e06-435b-83ea-362187033e29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/zup/xyinc/controller/PontoInteresseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/zup/xyinc/controller/PontoInteresseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/zup/xyinc/service/PontoInteresseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/zup/xyinc/service/PontoInteresseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/zup/xyinc/controller/PontoInteresseControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/zup/xyinc/controller/PontoInteresseControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/zup/xyinc/service/PontoInteresseServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/zup/xyinc/service/PontoInteresseServiceTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +53,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -91,7 +99,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PontoInteresseControllerTest.listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PontoInteresseControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="xy-inc" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +109,28 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.zup.xyinc.controller" />
       <option name="MAIN_CLASS_NAME" value="br.com.zup.xyinc.controller.PontoInteresseControllerTest" />
-      <option name="METHOD_NAME" value="listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PontoInteresseControllerTest.updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="xy-inc" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.zup.xyinc.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.zup.xyinc.controller" />
+      <option name="MAIN_CLASS_NAME" value="br.com.zup.xyinc.controller.PontoInteresseControllerTest" />
+      <option name="METHOD_NAME" value="updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PontoInteresseServiceTest.validateSortWhenParamIsInvalidExpectsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PontoInteresseServiceTest.validateUrlHasIdWhenObjIdIsNullExpectsBadRequestException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="xy-inc" />
       <extension name="coverage">
         <pattern>
@@ -117,23 +140,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="br.com.zup.xyinc.service" />
       <option name="MAIN_CLASS_NAME" value="br.com.zup.xyinc.service.PontoInteresseServiceTest" />
-      <option name="METHOD_NAME" value="validateSortWhenParamIsInvalidExpectsException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PontoInteresseServiceTest.validateSortWhenParamIsValidExpectsNothing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="xy-inc" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="br.com.zup.xyinc.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="br.com.zup.xyinc.service" />
-      <option name="MAIN_CLASS_NAME" value="br.com.zup.xyinc.service.PontoInteresseServiceTest" />
-      <option name="METHOD_NAME" value="validateSortWhenParamIsValidExpectsNothing" />
+      <option name="METHOD_NAME" value="validateUrlHasIdWhenObjIdIsNullExpectsBadRequestException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,17 +149,17 @@
     <list>
       <item itemvalue="Application.XyIncApplication" />
       <item itemvalue="JUnit.All in xy-inc" />
-      <item itemvalue="JUnit.PontoInteresseControllerTest.listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200" />
-      <item itemvalue="JUnit.PontoInteresseServiceTest.validateSortWhenParamIsValidExpectsNothing" />
-      <item itemvalue="JUnit.PontoInteresseServiceTest.validateSortWhenParamIsInvalidExpectsException" />
+      <item itemvalue="JUnit.PontoInteresseControllerTest" />
+      <item itemvalue="JUnit.PontoInteresseServiceTest.validateUrlHasIdWhenObjIdIsNullExpectsBadRequestException" />
+      <item itemvalue="JUnit.PontoInteresseControllerTest.updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in xy-inc" />
+        <item itemvalue="JUnit.PontoInteresseControllerTest.updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage" />
+        <item itemvalue="JUnit.PontoInteresseServiceTest.validateUrlHasIdWhenObjIdIsNullExpectsBadRequestException" />
         <item itemvalue="Application.XyIncApplication" />
-        <item itemvalue="JUnit.PontoInteresseServiceTest.validateSortWhenParamIsInvalidExpectsException" />
-        <item itemvalue="JUnit.PontoInteresseServiceTest.validateSortWhenParamIsValidExpectsNothing" />
-        <item itemvalue="JUnit.PontoInteresseControllerTest.listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200" />
+        <item itemvalue="JUnit.PontoInteresseControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -194,38 +201,38 @@
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
     <state width="444" height="466" key="DebuggerActiveHint/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587217550083" />
-    <state width="1638" height="170" key="GridCell.Tab.0.bottom" timestamp="1587346132521">
+    <state width="1638" height="206" key="GridCell.Tab.0.bottom" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="170" key="GridCell.Tab.0.bottom/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587346132521" />
-    <state width="1638" height="170" key="GridCell.Tab.0.center" timestamp="1587346132521">
+    <state width="1638" height="206" key="GridCell.Tab.0.bottom/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.0.center" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="170" key="GridCell.Tab.0.center/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587346132521" />
-    <state width="1638" height="170" key="GridCell.Tab.0.left" timestamp="1587346132521">
+    <state width="1638" height="206" key="GridCell.Tab.0.center/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.0.left" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="170" key="GridCell.Tab.0.left/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587346132521" />
-    <state width="1638" height="170" key="GridCell.Tab.0.right" timestamp="1587346132521">
+    <state width="1638" height="206" key="GridCell.Tab.0.left/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.0.right" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="170" key="GridCell.Tab.0.right/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587346132521" />
-    <state width="1638" height="206" key="GridCell.Tab.1.bottom" timestamp="1587345942089">
+    <state width="1638" height="206" key="GridCell.Tab.0.right/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.1.bottom" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="206" key="GridCell.Tab.1.bottom/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587345942089" />
-    <state width="1638" height="206" key="GridCell.Tab.1.center" timestamp="1587345942089">
+    <state width="1638" height="206" key="GridCell.Tab.1.bottom/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.1.center" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="206" key="GridCell.Tab.1.center/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587345942089" />
-    <state width="1638" height="206" key="GridCell.Tab.1.left" timestamp="1587345942089">
+    <state width="1638" height="206" key="GridCell.Tab.1.center/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.1.left" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="206" key="GridCell.Tab.1.left/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587345942089" />
-    <state width="1638" height="206" key="GridCell.Tab.1.right" timestamp="1587345942089">
+    <state width="1638" height="206" key="GridCell.Tab.1.left/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
+    <state width="1638" height="206" key="GridCell.Tab.1.right" timestamp="1587355654544">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
-    <state width="1638" height="206" key="GridCell.Tab.1.right/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587345942089" />
+    <state width="1638" height="206" key="GridCell.Tab.1.right/1280.0.1680.1050/0.0.1280.720@1280.0.1680.1050" timestamp="1587355654544" />
     <state x="1653" y="162" width="924" height="682" key="Maven.ArtifactSearchDialog" timestamp="1587078952273">
       <screen x="1280" y="0" width="1680" height="1050" />
     </state>
@@ -260,6 +267,11 @@
           <line>265</line>
           <option name="timeStamp" value="97" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/br/com/zup/xyinc/controller/PontoInteresseController.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -282,7 +294,7 @@
     <SUITE FILE_PATH="coverage/xy_inc$PontoInteresseControllerTest.ic" NAME="PontoInteresseControllerTest Coverage Results" MODIFIED="1587256606539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.zup.xyinc.controller.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/xy_inc$All_in_xy_inc.ic" NAME="All in xy-inc Coverage Results" MODIFIED="1587308244451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/xy_inc$All_in_xy_inc.ic" NAME="All in xy-inc Coverage Results" MODIFIED="1587355654513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/xy_inc$PontoInteresseServiceTest_deleteWhenDataIsValidExpectedRecordIsRemoved.ic" NAME="PontoInteresseServiceTest.deleteWhenDataIsValidExpectedRecordIsRemoved Coverage Results" MODIFIED="1587309706432" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>br.com.zup.xyinc.service.*</FILTER>
     </SUITE>

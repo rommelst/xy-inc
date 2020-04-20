@@ -13,7 +13,7 @@ Rodar com o Java 11.
 
 > mvn clean test
 
->mvn spring-boot:run
+> mvn spring-boot:run
 
 
 # Requisições
@@ -21,6 +21,7 @@ Rodar com o Java 11.
 
 ## 1. Consultar/Listar pontos de interesse já cadastrados 
 Todas requisições de consulta/listagem usam o método GET do HTTP.
+Código de retorno: 200 - OK
 ### Consultas sem paginação
 
 Para listar múltiplos pontos de interesse:
@@ -70,12 +71,15 @@ Exemplo:
 
 ## 2. Cadastrar novo ponto de interesse
 Usar o método POST do HTTP.
+Código de retorno: 201 - Created
+Url: O servidor retornará no **header location** a URL para acessar o novo recurso
 
 > http://localhost:8080/v1/pontointeresse : Cadastra no banco de dados o ponto de interesse enviado no corpo da requisição.
 
 Exemplo:
 
 	[POST] http://localhost:8080/v1/pontointeresse
+	[HEADER] Content-Type: application/json
 	{
 		"nomePontoInteresse": "Novo Registro"
 		"coordenadaX": 27,
@@ -90,14 +94,15 @@ Usar o método PUT do HTTP. Esse serviço checa se o id informad na URL e no cor
 Exemplo:
 
 	[PUT] http://localhost:8080/v1/pontointeresse/{id}
+	[HEADER] Content-Type: application/json
 	{
 		"id": {id}
-		"nomePontoInteresse": "Novo Registro"
+		"nomePontoInteresse": "Nome alterado do ponto de interesse"
 		"coordenadaX": 27,
 		"coordenadaY": 12,
 	}
 
-## 4. Apagar
+## 4. Apagar um ponto de interesse já cadastrado
 Usar o método DELETE do HTTP. Esse serviço checa se o id informad na URL e no corpo da requisição são o mesmo. 
 
 > http://localhost:8080/v1/pontointeresse/{id} : Apaga do banco de dados o ponto de interesse enviado no corpo da requisição.
@@ -107,3 +112,9 @@ Exemplo:
 	[DELETE] http://localhost:8080/v1/pontointeresse/{id}
 
 
+# Teste de integração
+### PontoInteresseControllerTest
+Nesse arquivo de teste, optei por fazer o teste de integração usando o banco de dados H2. Por isso, os *tests cases* que deveriam ter como ponto inicial as linhas de código do arquivo PontoInteresseController.java tiveram seu escopo expandido e passaram a abranger também a camada de serviços e de persistência.
+
+### PontoInteresseServiceTest
+Nesse arquivo de teste, optei por usar o Mockito para fazer o mock do repositório. Com isso o teste manteve seu foco nos requisitos de funcionalidade do pacote PontoInteresseService.

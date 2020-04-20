@@ -82,7 +82,7 @@ public class PontoInteresseService {
     }
 
     public void validateUrlHasId(PontoInteresse obj, Long id) {
-        if (obj.getId().compareTo(id) != 0) {
+        if (obj.getId() == null || obj.getId().compareTo(id) != 0) {
             throw new BadRequestException("id", "Id informado na URL difere do Id enviado no corpo da requisição.");
         }
         return;
