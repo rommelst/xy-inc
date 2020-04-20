@@ -617,7 +617,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenIdIsValidExpectsStatus200() throws Exception {
+	void updatePontoInteresseWhenIdIsValidExpectsStatus204() throws Exception {
 
 		// Arrange
 		endpoint += "/{id}";
@@ -630,7 +630,7 @@ class PontoInteresseControllerTest {
 		ResponseEntity<PontoInteresse> response = restTemplate.getForEntity(endpoint, PontoInteresse.class, poi.getId() );
 
 		// Assert
-		assertEquals(HttpStatus.OK.value(), putCode );
+		assertEquals(HttpStatus.NO_CONTENT.value(), putCode );
 		assertEquals(poi.getId(), response.getBody().getId() );
 		assertEquals(poi.getNomePontoInteresse(), response.getBody().getNomePontoInteresse() );
 		assertEquals(poi.getCoordenadaX(), response.getBody().getCoordenadaX() );
@@ -726,6 +726,26 @@ class PontoInteresseControllerTest {
 		assertEquals("Erro de requisição", errorType(response.getBody()) );
 		assertEquals("None", errorValue(response.getBody(), "fieldName") );
 		assertEquals("Required request body is missing: public org.springframework.http.ResponseEntity<?> br.com.zup.xyinc.controller.PontoInteresseController.updateBadFormed(br.com.zup.xyinc.domain.PontoInteresse)", errorValue(response.getBody(), "message") );
+
+	}
+
+	@Test
+	void updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage() throws Exception {
+
+		// Arrange
+		endpoint += "/{id}";
+		poi = new PontoInteresse(null, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
+		int idUrl = 141;
+		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+
+		// Action
+		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class, idUrl);
+
+		// Assert
+		assertEquals(HttpStatus.BAD_REQUEST.value(), response.getStatusCodeValue() );
+		assertEquals("Erro de requisição", errorType(response.getBody()) );
+		assertEquals("id", errorValue(response.getBody(), "fieldName") );
+		assertEquals("Id informado na URL difere do Id enviado no corpo da requisição.", errorValue(response.getBody(), "message") );
 
 	}
 

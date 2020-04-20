@@ -284,6 +284,24 @@ public class PontoInteresseServiceTest {
     }
 
     @Test
+    public void validateUrlHasIdWhenObjIdIsNullExpectsBadRequestException() {
+
+        // Arrange
+        PontoInteresse poi = new PontoInteresse(null, "Ponto Interesse", 20, 30);
+
+        // Assert
+        BadRequestException thrown = assertThrows(BadRequestException.class, () -> {
+
+            // Act
+            service.validateUrlHasId(poi, 10L);
+
+        });
+        assertEquals("id", thrown.getFieldName());
+        assertEquals("Id informado na URL difere do Id enviado no corpo da requisição.", thrown.getMessage());
+
+    }
+
+    @Test
     public void validateSortWhenParamIsValidExpectsNothing() {
 
         // Arrange

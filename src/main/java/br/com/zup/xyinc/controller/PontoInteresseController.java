@@ -96,7 +96,7 @@ public class PontoInteresseController {
 	public ResponseEntity<?> update(@Valid @RequestBody PontoInteresse obj, @NotNull  @PathVariable Long id) {
 		service.validateUrlHasId(obj, id);
 		service.update(obj);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
 	@PutMapping
