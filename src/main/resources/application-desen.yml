@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: xy-inc
+  datasource:
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    password: ''
+    url: jdbc:postgresql://database:1504/udemy
+    username: devdojo
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+server:
+  port: 8080
+    
