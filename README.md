@@ -8,9 +8,12 @@ ajuda.
 
 # Instalação
 ### Baixar, testar e executar
+Rodar com o Java 11.
 > git clone https://github.com/rommelst/xy-inc.git
-mvn clean test
-mvn spring-boot:run
+
+> mvn clean test
+
+>mvn spring-boot:run
 
 
 # Requisições
