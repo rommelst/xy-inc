@@ -9,8 +9,8 @@ ajuda.
 # Instalação
 ### Baixar, testar e executar
 > git clone https://github.com/rommelst/xy-inc.git
-> mvn clean test
-> mvn spring-boot:run
+mvn clean test
+mvn spring-boot:run
 
 
 # Requisições
@@ -65,7 +65,7 @@ Exemplo:
 	[GET] http://localhost:8080/v1/pontointeresse/near/page?x=20&y=10&d=10&page=2&size=10&sort=nomePontoInteresse
 
 
-## Cadastrar novo ponto de interesse
+## 2. Cadastrar novo ponto de interesse
 Usar o método POST do HTTP.
 
 > http://localhost:8080/v1/pontointeresse : Cadastra no banco de dados o ponto de interesse enviado no corpo da requisição.
@@ -79,7 +79,7 @@ Exemplo:
 		"coordenadaY": 12,
 	}
 
-## Alterar ponto de interesse existente
+## 3. Alterar ponto de interesse existente
 Usar o método PUT do HTTP. Esse serviço checa se o id informad na URL e no corpo da requisição são o mesmo.
 
 > http://localhost:8080/v1/pontointeresse/{id} : Altera no banco de dados o ponto de interesse enviado no corpo da requisição.
@@ -94,7 +94,7 @@ Exemplo:
 		"coordenadaY": 12,
 	}
 
-## Apagar
+## 4. Apagar
 Usar o método DELETE do HTTP. Esse serviço checa se o id informad na URL e no corpo da requisição são o mesmo. 
 
 > http://localhost:8080/v1/pontointeresse/{id} : Apaga do banco de dados o ponto de interesse enviado no corpo da requisição.
