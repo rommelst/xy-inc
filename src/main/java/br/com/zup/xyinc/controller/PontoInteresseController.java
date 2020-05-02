@@ -46,7 +46,7 @@ public class PontoInteresseController {
 	@GetMapping(path = "page")
 	public ResponseEntity<Page<PontoInteresse>> listAllWithPage(Pageable pageable) {
 		service.validateSortColumn(pageable.getSort());
-		return new ResponseEntity<Page<PontoInteresse>>(service.page(pageable), HttpStatus.OK);
+		return new ResponseEntity<>(service.page(pageable), HttpStatus.OK);
 	}
 
 	@GetMapping( path = "near")
@@ -66,7 +66,7 @@ public class PontoInteresseController {
 			Pageable pageable
 	) {
 		service.validateSortColumn(pageable.getSort());
-		return new ResponseEntity<Page<PontoInteresse>>(service.listNearWithPage(actualX, actualY, distancia, pageable), HttpStatus.OK);
+		return new ResponseEntity<>(service.listNearWithPage(actualX, actualY, distancia, pageable), HttpStatus.OK);
 	}
 
 	@PostMapping

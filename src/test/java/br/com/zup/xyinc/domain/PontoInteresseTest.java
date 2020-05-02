@@ -152,7 +152,7 @@ class PontoInteresseTest {
 		PontoInteresse poi = new PontoInteresse(1L, "Lan House", 27, 12);
 
 		// Act
-		Integer hashCode = poi.hashCode();
+		int hashCode = poi.hashCode();
 
 		// Assert
 		assertTrue(hashCode > 0);

@@ -29,9 +29,9 @@ public class PontoInteresseService {
         return repository.save(obj);
     }
 
-    public PontoInteresse update(PontoInteresse obj) {
+    public void update(PontoInteresse obj) {
         find(obj.getId());
-        return repository.save(obj);
+        repository.save(obj);
     }
 
     public void delete(Long id) {
@@ -77,15 +77,13 @@ public class PontoInteresseService {
 
     @Transactional(readOnly=true)
     public Page<PontoInteresse> listNearWithPage(Integer atualX, Integer atualY, Integer distancia, Pageable pageable) {
-        Page<PontoInteresse> page = repository.searchNear(atualX, atualY, distancia, pageable);
-        return page;
+        return repository.searchNear(atualX, atualY, distancia, pageable);
     }
 
     public void validateUrlHasId(PontoInteresse obj, Long id) {
         if (obj.getId() == null || obj.getId().compareTo(id) != 0) {
             throw new BadRequestException("id", "Id informado na URL difere do Id enviado no corpo da requisição.");
         }
-        return;
     }
 
     public void validateSortColumn(Sort sort) {

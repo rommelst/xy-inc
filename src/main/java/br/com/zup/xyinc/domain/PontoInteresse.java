@@ -11,7 +11,7 @@ import java.util.Objects;
 @Table(indexes = {
 		@Index(columnList = "coordenadax, coordenaday", name = "idx_XY")
 })
-public class PontoInteresse implements Serializable {
+public class PontoInteresse implements Serializable, Cloneable {
 	
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE, generator="poi_g")
