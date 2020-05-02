@@ -4,7 +4,6 @@ import br.com.zup.xyinc.domain.PontoInteresse;
 import br.com.zup.xyinc.repository.PontoInteresseRepository;
 import br.com.zup.xyinc.service.exception.BadRequestException;
 import br.com.zup.xyinc.service.exception.ObjectNotFoundException;
-import net.bytebuddy.TypeCache;
 import org.junit.jupiter.api.Test;
 import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,7 +89,7 @@ public class PontoInteresseServiceTest {
 
         // Assert
         assertFalse(repository.existsById(poi.getId()));
-        ;
+
     }
 
     @Test
@@ -168,7 +167,7 @@ public class PontoInteresseServiceTest {
                 new PontoInteresse(41L, "Pub", 15, 12),
                 new PontoInteresse(41L, "Supermercado", 15, 12)
         );
-        Page<PontoInteresse> mockPage = new PageImpl<PontoInteresse>(list, pageable, list.size());
+        Page<PontoInteresse> mockPage = new PageImpl<>(list, pageable, list.size());
         BDDMockito
                 .when(repository.findAll(pageable))
                 .thenReturn(mockPage)
@@ -235,7 +234,7 @@ public class PontoInteresseServiceTest {
                 new PontoInteresse(41L, "Pub", 15, 12),
                 new PontoInteresse(41L, "Supermercado", 15, 12)
         );
-        Page<PontoInteresse> mockPage = new PageImpl<PontoInteresse>(list, pageable, list.size());
+        Page<PontoInteresse> mockPage = new PageImpl<>(list, pageable, list.size());
         BDDMockito
             .when(repository.searchNear(actualX, actualY, distance, pageable))
             .thenReturn(mockPage)

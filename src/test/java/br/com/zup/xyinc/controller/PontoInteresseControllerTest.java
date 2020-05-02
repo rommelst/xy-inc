@@ -16,7 +16,6 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.*;
 
@@ -88,7 +87,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void getPontoInteresseByIdWhenIdIsValidExpectsFullBeanAndStatus200() throws Exception {
+	void getPontoInteresseByIdWhenIdIsValidExpectsFullBeanAndStatus200() {
 
 		// Arrange
 		endpoint += "/{id}";
@@ -107,7 +106,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void getPontoInteresseByIdWhenIdIsInvalidExpectsStatus404() throws Exception {
+	void getPontoInteresseByIdWhenIdIsInvalidExpectsStatus404() {
 
 		// Arrange
 		endpoint += "/{id}";
@@ -121,7 +120,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenNoParamIsSuppliedExpectsAllRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenNoParamIsSuppliedExpectsAllRecordsAndStatus200() {
 
 		// Arrange
 
@@ -136,11 +135,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenNoPageIsSuppliedExpectsDefaultPageSizeRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenNoPageIsSuppliedExpectsDefaultPageSizeRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/page";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -152,10 +152,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenPage0IsSuppliedExpectsDefaultSizeRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenPage0IsSuppliedExpectsDefaultSizeRecordsAndStatus200() {
 		// Arrange
 		endpoint += "/page?page=0";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -167,10 +168,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenPage1IsSuppliedExpectsDefaultSizeRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenPage1IsSuppliedExpectsDefaultSizeRecordsAndStatus200() {
 		// Arrange
 		endpoint += "/page?page=1";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -182,11 +184,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenLastPageIsSuppliedExpectsDefaultSizeRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenLastPageIsSuppliedExpectsDefaultSizeRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/page?page=2";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -199,11 +202,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenPageSizeIsSuppliedExpectsSizeRecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenPageSizeIsSuppliedExpectsSizeRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/page?size=10";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -216,11 +220,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listAllPontoInteresseWhenPageSizeIs10AndLastPageIsSuppliedExpects7RecordsAndStatus200() throws Exception {
+	void listAllPontoInteresseWhenPageSizeIs10AndLastPageIsSuppliedExpects7RecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/page?page=5&size=10";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 
 		// Action
 		ResponseEntity<HelperPage> response = restTemplate.exchange(endpoint, HttpMethod.GET, null/*httpEntity*/, responseType);
@@ -233,7 +238,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateXIs20AndCoordenateYIs10AndDistanceIs10ExpectsSpecificsRecordsAndStatus200() throws Exception {
+	void listNearPontoInteresseWhenCoordenateXIs20AndCoordenateYIs10AndDistanceIs10ExpectsSpecificsRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/near?x={actualX}&y={actualY}&d={distance}";
@@ -260,7 +265,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200() throws Exception {
+	void listNearPontoInteresseWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200() {
 
 		// Arrange
 		endpoint += "/near?&x={actualX}&y={actualY}&d={distance}";
@@ -289,7 +294,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateIs5000x5000AndDistanceIs149ExpectsInnerCircleRecordsAndStatus200() throws Exception {
+	void listNearPontoInteresseWhenCoordenateIs5000x5000AndDistanceIs149ExpectsInnerCircleRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/near?&x={actualX}&y={actualY}&d={distance}";
@@ -315,7 +320,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateAndDistanceAreValidExpectsNoOuterCircleRecordsAndStatus200() throws Exception {
+	void listNearPontoInteresseWhenCoordenateAndDistanceAreValidExpectsNoOuterCircleRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/near?&x={actualX}&y={actualY}&d={distance}";
@@ -342,7 +347,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateXIsNullExpectsStatus400AndErrorMessage() throws Exception {
+	void listNearPontoInteresseWhenCoordenateXIsNullExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/near?&y={actualY}&d={distance}";
@@ -361,7 +366,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateYIsNullExpectsStatus400AndErrorMessage() throws Exception {
+	void listNearPontoInteresseWhenCoordenateYIsNullExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/near?&x={actualX}&d={distance}";
@@ -380,7 +385,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenDistanceIsNullExpectsStatus400AndErrorMessage() throws Exception {
+	void listNearPontoInteresseWhenDistanceIsNullExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/near?&x={actualX}&y={actualY}";
@@ -399,7 +404,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateXIsNegativeExpectsStatus400AndErrorMessage() throws Exception {
+	void listNearPontoInteresseWhenCoordenateXIsNegativeExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/near?x={actualX}&y={actualY}&d={distance}";
@@ -419,7 +424,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateYIsNegativeExpectsStatus400AndErrorMessage() throws Exception {
+	void listNearPontoInteresseWhenCoordenateYIsNegativeExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/near?x={actualX}&y={actualY}&d={distance}";
@@ -439,11 +444,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseWhenCoordenateAndDistanceAreValidAndNoPageIsSuppliedExpectsDefaultSizeRecordsAndStatus200() throws Exception {
+	void listNearPontoInteresseWhenCoordenateAndDistanceAreValidAndNoPageIsSuppliedExpectsDefaultSizeRecordsAndStatus200() {
 
 		// Arrange
 		endpoint += "/near/page?x={actualX}&y={actualY}&d={distance}";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 		Integer actualX = 20;
 		Integer actualY = 10;
 		Integer distance = 1000000;
@@ -459,11 +465,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200() throws Exception {
+	void listNearPontoInteresseByPageWhenCoordenateIs5000x5000AndDistanceIs150ExpectsPointsOfCircunferenceAndStatus200() {
 
 		// Arrange
 		endpoint += "/near/page?&x={actualX}&y={actualY}&d={distance}&page=0";
-		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<HelperPage>() { };
+		ParameterizedTypeReference<HelperPage> responseType = new ParameterizedTypeReference<>() {
+		};
 		Integer actualX = 5000;
 		Integer actualY = 6000;
 		Integer distance = 150;
@@ -489,7 +496,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void createPontoInteresseWhenDataIsValidExpectsStatus201AndHeaderLocation() throws Exception {
+	void createPontoInteresseWhenDataIsValidExpectsStatus201AndHeaderLocation() {
 
 		// Arrange
 
@@ -503,7 +510,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void createPontoInteresseWhenXIsNullExpectsStatus404AndErrorMessage() throws Exception {
+	void createPontoInteresseWhenXIsNullExpectsStatus404AndErrorMessage() {
 
 		// Arrange
 		poiJson.remove("coordenadaX");
@@ -519,7 +526,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void createPontoInteresseWhenYIsNullExpectsStatus404AndErrorMessage() throws Exception {
+	void createPontoInteresseWhenYIsNullExpectsStatus404AndErrorMessage() {
 
 		// Arrange
 		poiJson.remove("coordenadaY");
@@ -535,7 +542,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void createPontoInteresseWhenCoordenadaXIsNegativeExpectsStatus404AndErrorMessage() throws Exception {
+	void createPontoInteresseWhenCoordenadaXIsNegativeExpectsStatus404AndErrorMessage() {
 
 		// Arrange
 		poiJson.put("coordenadaX", -27);
@@ -552,7 +559,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void createPontoInteresseWhenCoordenadaYIsNegativeExpectsStatus404AndErrorMessage() throws Exception {
+	void createPontoInteresseWhenCoordenadaYIsNegativeExpectsStatus404AndErrorMessage() {
 
 		// Arrange
 		poiJson.put("coordenadaY", -12);
@@ -569,7 +576,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void deletePontoInteresseWhenIdIsValidExpectsStatus204() throws Exception {
+	void deletePontoInteresseWhenIdIsValidExpectsStatus204() {
 
 		// Arrange
 		endpoint += "/{id}";
@@ -584,7 +591,7 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void deletePontoInteresseWhenIdIsInvalidExpectsStatus404() throws Exception {
+	void deletePontoInteresseWhenIdIsInvalidExpectsStatus404() {
 
 		// Arrange
 		endpoint += "/{id}";
@@ -599,11 +606,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void deletePontoInteresseWhenParamIdIsNotSuppliedExpectsStatus400AndErrorMessage() throws Exception {
+	void deletePontoInteresseWhenParamIdIsNotSuppliedExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		poi = new PontoInteresse(1121L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.DELETE, entity, String.class);
@@ -617,12 +624,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenIdIsValidExpectsStatus204() throws Exception {
+	void updatePontoInteresseWhenIdIsValidExpectsStatus204() {
 
 		// Arrange
 		endpoint += "/{id}";
 		poi = new PontoInteresse(1121L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> responsePut = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class, poi.getId());
@@ -639,12 +646,12 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenIdIsInvalidExpectsStatus404AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenIdIsInvalidExpectsStatus404AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/{id}";
 		poi = new PontoInteresse(2L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class, poi.getId());
@@ -656,13 +663,13 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenParamIdNotEqualBodyIdExpectsStatus400AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenParamIdNotEqualBodyIdExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/{id}";
 		poi = new PontoInteresse(1121L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
 		int idUrl = 2;
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class, idUrl);
@@ -676,11 +683,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenUrlHasNoIdAndCoordenadaXIsNegativeIdExpectsStatus400AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenUrlHasNoIdAndCoordenadaXIsNegativeIdExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		poiJson.put("coordenadaX", -27);
-		HttpEntity<JSONObject> entity = new HttpEntity<JSONObject>(poiJson, headers);
+		HttpEntity<JSONObject> entity = new HttpEntity<>(poiJson, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class);
@@ -694,11 +701,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenParamIdIsNotSuppliedExpectsStatus400AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenParamIdIsNotSuppliedExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		poi = new PontoInteresse(1121L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class);
@@ -712,11 +719,11 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenParamIdIsNotSuppliedAndHasNoBodyExpectsStatus400AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenParamIdIsNotSuppliedAndHasNoBodyExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		poi = new PontoInteresse(1121L, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, null, String.class);
@@ -730,13 +737,13 @@ class PontoInteresseControllerTest {
 	}
 
 	@Test
-	void updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage() throws Exception {
+	void updatePontoInteresseWhenBodyIdIsNullExpectsStatus400AndErrorMessage() {
 
 		// Arrange
 		endpoint += "/{id}";
 		poi = new PontoInteresse(null, "Nome do Ponto de Interesse foi alterado", 1150, 5011);
 		int idUrl = 141;
-		HttpEntity<PontoInteresse> entity = new HttpEntity<PontoInteresse>(poi, headers);
+		HttpEntity<PontoInteresse> entity = new HttpEntity<>(poi, headers);
 
 		// Action
 		ResponseEntity<String> response = restTemplate.exchange(endpoint, HttpMethod.PUT, entity, String.class, idUrl);
